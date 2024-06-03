@@ -5,8 +5,13 @@
 // Execute `rustlings hint intro2` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
+
 
 fn main() {
     printline!("Hello there!")
+}
+
+// remplacemment de printline par println pour afficher "Hello there"
+fn main() {
+    println!("Hello there!")
 }
