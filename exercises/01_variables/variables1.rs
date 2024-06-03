@@ -11,3 +11,9 @@ fn main() {
     x = 5;
     println!("x has the value {}", x);
 }
+
+// ajout de let devant x = 5;
+fn main() {
+    let x = 5;
+    println!("x has the value {}", x);
+}
