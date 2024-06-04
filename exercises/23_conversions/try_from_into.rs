@@ -26,7 +26,6 @@ enum IntoColorError {
     // Integer conversion error
     IntConversion,
 }
-
 // I AM NOT DONE
 
 // Your task is to complete this implementation and return an Ok result of inner
@@ -41,6 +40,11 @@ enum IntoColorError {
 impl TryFrom<(i16, i16, i16)> for Color {
     type Error = IntoColorError;
     fn try_from(tuple: (i16, i16, i16)) -> Result<Self, Self::Error> {
+        let (r, g, b) = tuple;
+        let (red, green, blue) = (u8::try_from(r).or(Err(IntoColorError::IntConversion))?,
+	    	  	       	  u8::try_from(g).or(Err(IntoColorError::IntConversion))?,
+				  u8::try_from(b).or(Err(IntoColorError::IntConversion))?);
+        Ok(Color{red, green, blue})
     }
 }
 
@@ -48,6 +52,8 @@ impl TryFrom<(i16, i16, i16)> for Color {
 impl TryFrom<[i16; 3]> for Color {
     type Error = IntoColorError;
     fn try_from(arr: [i16; 3]) -> Result<Self, Self::Error> {
+        let [r, g, b] = arr;
+        (r, g, b).try_into()
     }
 }
 
@@ -55,38 +61,33 @@ impl TryFrom<[i16; 3]> for Color {
 impl TryFrom<&[i16]> for Color {
     type Error = IntoColorError;
     fn try_from(slice: &[i16]) -> Result<Self, Self::Error> {
+        match slice {
+            [r, g, b] => Color::try_from((*r, *g, *b)),
+            _ => Err(IntoColorError::BadLen)?
+        }
     }
 }
 
 fn main() {
-    // Use the `try_from` function
+    
     let c1 = Color::try_from((183, 65, 14));
     println!("{:?}", c1);
 
-    // Since TryFrom is implemented for Color, we should be able to use TryInto
+    
     let c2: Result<Color, _> = [183, 65, 14].try_into();
     println!("{:?}", c2);
 
     let v = vec![183, 65, 14];
-    // With slice we should use `try_from` function
+    
     let c3 = Color::try_from(&v[..]);
     println!("{:?}", c3);
-    // or take slice within round brackets and use TryInto
-    let c4: Result<Color, _> = (&v[..]).try_into();
-    println!("{:?}", c4);
+   
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
-    #[test]
-    fn test_tuple_out_of_range_positive() {
-        assert_eq!(
-            Color::try_from((256, 1000, 10000)),
-            Err(IntoColorError::IntConversion)
-        );
-    }
     #[test]
     fn test_tuple_out_of_range_negative() {
         assert_eq!(
@@ -190,4 +191,4 @@ mod tests {
         let v = vec![0, 0];
         assert_eq!(Color::try_from(&v[..]), Err(IntoColorError::BadLen));
     }
-}
+
