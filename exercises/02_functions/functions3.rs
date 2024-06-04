@@ -4,17 +4,6 @@
 // hint.
 
 fn main() {
-    call_me();
-}
-
-fn call_me(num: u32) {
-    for i in 0..num {
-        println!("Ring! Call number {}", i + 1);
-    }
-}
-
-// ajout du 0 dans la focntion "call_me(0)"
-fn main() {
     call_me(0);
 }
 
