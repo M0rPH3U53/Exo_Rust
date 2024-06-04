@@ -8,6 +8,8 @@
 
 // I AM NOT DONE
 
+// ajout de numbers.1 dans la varible seconde
+
 #[test]
 fn indexing_tuple() {
     let numbers = (1, 2, 3);
