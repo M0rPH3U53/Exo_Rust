@@ -34,7 +34,7 @@ impl Package {
     fn is_international(&self) -> bool {
         self.sender_country != self.recipient_country
     }
-
+    // ajout de la variable dans la fonction get_fees
     fn get_fees(&self, cents_per_gram: u32) -> u32 {
         // Something goes here...
         cents_per_gram * self.weight_in_grams
