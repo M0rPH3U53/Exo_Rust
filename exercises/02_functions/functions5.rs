@@ -3,16 +3,7 @@
 // Execute `rustlings hint functions5` or use the `hint` watch subcommand for a
 // hint.
 
-fn main() {
-    let answer = square(3);
-    println!("The square of 3 is {}", answer);
-}
-
-fn square(num: i32) -> i32 {
-    num * num;
-}
-
-// suppression de ";" a la fin de "num * num"
+// suppression de la string ";" a la fin de "num * num"
 
 fn main() {
     let answer = square(3);
