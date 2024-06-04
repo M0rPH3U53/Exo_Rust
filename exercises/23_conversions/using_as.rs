@@ -12,11 +12,6 @@
 
 // I AM NOT DONE
 
-fn average(values: &[f64]) -> f64 {
-    let total = values.iter().sum::<f64>();
-    total / values.len()
-}
-
 fn main() {
     let values = [3.5, 0.3, 13.0, 11.7];
     println!("{}", average(&values));
