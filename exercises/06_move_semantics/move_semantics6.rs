@@ -19,7 +19,7 @@ fn main() {
 fn get_char(data: &String) -> char {
     data.chars().last().unwrap()
 }
-
+// suppression dela string "&"
 // Should take ownership
 fn string_uppercase(mut data: String) {
     data = data.to_uppercase();
