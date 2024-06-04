@@ -5,8 +5,6 @@
 //
 // Execute `rustlings hint if2` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
-
 pub fn foo_if_fizz(fizzish: &str) -> &str {
     if fizzish == "fizz" {
         "foo"
@@ -34,4 +32,15 @@ mod tests {
     fn default_to_baz() {
         assert_eq!(foo_if_fizz("literally anything"), "baz")
     }
+}
+
+// ajout de else if et de {bar} a la fin apres else
+
+pub fn foo_if_fizz(fizzish: &str) -> &str {
+    if fizzish == "fizz" {
+        "foo"
+    } else if fizzish == "fuzz"{
+        "bar"
+    }
+    else { "baz" }
 }
