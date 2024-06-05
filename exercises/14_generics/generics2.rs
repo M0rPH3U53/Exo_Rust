@@ -6,9 +6,9 @@
 // Execute `rustlings hint generics2` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
 
-// ajout de la valeur t
+// Ajout de la valeur de type T 
+// à  "Wrapper" pour permettre à la structure de contenir n'importe quel valeur.
 struct Wrapper<T> {
     value: T,
 }
