@@ -6,11 +6,6 @@
 // hint.
 
 
-
-fn main() {
-    printline!("Hello there!")
-}
-
 // remplacemment de printline par println pour afficher "Hello there"
 fn main() {
     println!("Hello there!")
