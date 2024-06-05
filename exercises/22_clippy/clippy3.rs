@@ -3,7 +3,7 @@
 // Here's a couple more easy Clippy fixes, so you can see its utility.
 // No hints.
 
-// I AM NOT DONE
+// A NE PAS FAIRE
 
 #[allow(unused_variables, unused_assignments)]
 fn main() {
