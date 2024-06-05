@@ -7,7 +7,6 @@
 //
 // No hints this time!
 
-// I AM NOT DONE
 
 
 fn string_slice(arg: &str) {
@@ -17,7 +16,8 @@ fn string(arg: String) {
     println!("{}", arg);
 }
 
-// ajout de variable string_slice & string dans la focntion main car cela sont des caractere.
+
+// Pour chaque valeur, il faut appeler la focntion appropriée en fonction de son type
 fn main() {
     string_slice("blue");
     string("red".to_string());
