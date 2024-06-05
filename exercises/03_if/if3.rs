@@ -2,15 +2,62 @@
 //
 // Execute `rustlings hint if3` or use the `hint` watch subcommand for a hint.
 
-// ajout du chiffre 4 a la fin du else car il y a 4 type.
+// Suppression du nombre flottant '2.0' par '2' car rust ne les surpport pas.
+// Remplacement de "Unknow" par "4" pour gerer les aninmaux inconnu
+// pour plus de logique et de clarter
 
 pub fn animal_habitat(animal: &str) -> &'static str {
     let identifier = if animal == "crab" {
         1
     } else if animal == "gopher" {
-        2.0
+        2
     } else if animal == "snake" {
         3
     } else {
         4
     };
+
+    // DO NOT CHANGE THIS STATEMENT BELOW
+    let habitat = if identifier == 1 {
+        "Beach"
+    } else if identifier == 2 {
+        "Burrow"
+    } else if identifier == 3 {
+        "Desert"
+    } else {
+        "Unknown"
+    };
+
+    habitat
+}
+
+// No test changes needed.
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn gopher_lives_in_burrow() {
+        assert_eq!(animal_habitat("gopher"), "Burrow")
+    }
+
+    #[test]
+    fn snake_lives_in_desert() {
+        assert_eq!(animal_habitat("snake"), "Desert")
+    }
+
+    #[test]
+    fn crab_lives_on_beach() {
+        assert_eq!(animal_habitat("crab"), "Beach")
+    }
+
+    #[test]
+    fn unknown_animal() {
+        assert_eq!(animal_habitat("dinosaur"), "Unknown")
+    }
+}
+    #[test]
+    fn unknown_animal() {
+        assert_eq!(animal_habitat("dinosaur"), "Unknown")
+    }
+}
