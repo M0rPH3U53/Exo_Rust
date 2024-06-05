@@ -6,9 +6,9 @@
 // Execute `rustlings hint primitive_types6` or use the `hint` watch subcommand
 // for a hint.
 
-// I AM NOT DONE
 
-// ajout de numbers.1 dans la varible seconde
+// Pour acceder au 2 ieme element de la turple il faut ajouter "number.1" a la variable "second"
+// pour que le test commence a 1
 
 #[test]
 fn indexing_tuple() {
