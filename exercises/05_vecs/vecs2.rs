@@ -7,9 +7,10 @@
 //
 // Execute `rustlings hint vecs2` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
 
-// ajout de la variable element.
+// Ajout de "element" dans la boucle for pour multiplier par 2 avec *= l'element de la boucle de la fonction "vec_loop"
+// de meme pour la fonction "vec_map"  en ajoutant element * 2 , ce qui renvoye de nouveau numero.
+
 fn vec_loop(mut v: Vec<i32>) -> Vec<i32> {
     for element in v.iter_mut() {
         // TODO: Fill this up so that each element in the Vec `v` is
